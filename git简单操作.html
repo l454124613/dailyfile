@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>git简单操作.html</title>
+  <meta name="generator" content="Haroopad 0.13.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);.haroopad{padding:20px;color:#222;font-size:15px;font-family:"Roboto Condensed",Tauri,"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}.haroopad a{color:#3269a0}.haroopad a:hover{color:#4183c4}.haroopad h2{border-bottom:1px solid #e6e6e6}.haroopad h6{color:#777}.haroopad hr{border:1px solid #e6e6e6}.haroopad blockquote>code,.haroopad h1>code,.haroopad h2>code,.haroopad h3>code,.haroopad h4>code,.haroopad h5>code,.haroopad h6>code,.haroopad li>code,.haroopad p>code,.haroopad td>code{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%;background-color:rgba(0,0,0,.02);padding:.2em .5em;border:1px solid #efefef}.haroopad pre>code{font-size:1em;letter-spacing:-1px;font-weight:700}.haroopad blockquote{border-left:4px solid #e6e6e6;padding:0 15px;color:#777}.haroopad table{background-color:#fafafa}.haroopad table tr td,.haroopad table tr th{border:1px solid #e6e6e6}.haroopad table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.lisp .hljs-string{color:#93a1a1}.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}.hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal{color:#268bd2}.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}.hljs-deletion,.hljs-important{color:#dc322f}.hljs-link_label{color:#6c71c4}.tex .hljs-formula{background:#eee8d5}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:2px;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:2px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:1em}.MathJax_MenuRadioCheck.RTL{right:1em;left:auto}.MathJax_MenuLabel{padding:2px 2em 4px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #CCC;margin:4px 1px 0}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:Highlight;color:HighlightText}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown haroopad">
+<p class="toc" style="undefined"></p><ul>
+<li><ul>
+<li><span class="title">
+<a href="#git简单操作" title="git简单操作">git简单操作</a>
+</span>
+<!--span class="number">
+0
+</span-->
+<ul>
+<li><span class="title">
+<a href="#remote的相关操作" title="remote的相关操作">remote的相关操作</a>
+</span>
+<!--span class="number">
+1
+</span-->
+<ul>
+<li><span class="title">
+<a href="#*查看当前的远程库*" title="查看当前的远程库">查看当前的远程库</a>
+</span>
+<!--span class="number">
+2
+</span-->
+</li>
+<li><span class="title">
+<a href="#添加远程仓库" title="添加远程仓库">添加远程仓库</a>
+</span>
+<!--span class="number">
+3
+</span-->
+</li>
+<li><span class="title">
+<a href="#修改远程库信息" title="修改远程库信息">修改远程库信息</a>
+</span>
+<!--span class="number">
+4
+</span-->
+</li>
+<li><span class="title">
+<a href="#建立远程仓库" title="建立远程仓库">建立远程仓库</a>
+</span>
+<!--span class="number">
+5
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#常用指令" title="常用指令">常用指令</a>
+</span>
+<!--span class="number">
+6
+</span-->
+<ul>
+<li><span class="title">
+<a href="#clone的相关操作" title="clone的相关操作">clone的相关操作</a>
+</span>
+<!--span class="number">
+7
+</span-->
+</li>
+<li><span class="title">
+<a href="#status的相关操作" title="status的相关操作">status的相关操作</a>
+</span>
+<!--span class="number">
+8
+</span-->
+</li>
+<li><span class="title">
+<a href="#log相关操作" title="log相关操作">log相关操作</a>
+</span>
+<!--span class="number">
+9
+</span-->
+</li>
+<li><span class="title">
+<a href="#创建别名" title="创建别名">创建别名</a>
+</span>
+<!--span class="number">
+10
+</span-->
+</li>
+<li><span class="title">
+<a href="#add的相关操作" title="add的相关操作">add的相关操作</a>
+</span>
+<!--span class="number">
+11
+</span-->
+</li>
+<li><span class="title">
+<a href="#branch相关操作" title="branch相关操作">branch相关操作</a>
+</span>
+<!--span class="number">
+12
+</span-->
+</li>
+<li><span class="title">
+<a href="#checkout相关操作" title="checkout相关操作">checkout相关操作</a>
+</span>
+<!--span class="number">
+13
+</span-->
+</li>
+<li><span class="title">
+<a href="#commit相关操作" title="commit相关操作">commit相关操作</a>
+</span>
+<!--span class="number">
+14
+</span-->
+</li>
+<li><span class="title">
+<a href="#diff的相关操作" title="diff的相关操作">diff的相关操作</a>
+</span>
+<!--span class="number">
+15
+</span-->
+</li>
+<li><span class="title">
+<a href="#目录树初步了解" title="目录树初步了解">目录树初步了解</a>
+</span>
+<!--span class="number">
+16
+</span-->
+<ul>
+<li><span class="title">
+<a href="#目录树的浏览" title="目录树的浏览">目录树的浏览</a>
+</span>
+<!--span class="number">
+17
+</span-->
+</li>
+<li><span class="title">
+<a href="#不要使用git-commit--a" title="不要使用git commit -a">不要使用git commit -a</a>
+</span>
+<!--span class="number">
+18
+</span-->
+</li>
+<li><span class="title">
+<a href="#保存当前工作进度" title="保存当前工作进度">保存当前工作进度</a>
+</span>
+<!--span class="number">
+19
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#fetch相关操作" title="fetch相关操作">fetch相关操作</a>
+</span>
+<!--span class="number">
+20
+</span-->
+</li>
+<li><span class="title">
+<a href="#init相关操作" title="init相关操作">init相关操作</a>
+</span>
+<!--span class="number">
+21
+</span-->
+</li>
+<li><span class="title">
+<a href="#rm相关操作" title="rm相关操作">rm相关操作</a>
+</span>
+<!--span class="number">
+22
+</span-->
+</li>
+<li><span class="title">
+<a href="#reset的相关操作" title="reset的相关操作">reset的相关操作</a>
+</span>
+<!--span class="number">
+23
+</span-->
+<ul>
+<li><ul>
+<li><span class="title">
+<a href="#常用示例" title="常用示例">常用示例</a>
+</span>
+<!--span class="number">
+24
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#revert相关操作" title="revert相关操作">revert相关操作</a>
+</span>
+<!--span class="number">
+25
+</span-->
+</li>
+<li><span class="title">
+<a href="#merge相关操作" title="merge相关操作">merge相关操作</a>
+</span>
+<!--span class="number">
+26
+</span-->
+</li>
+<li><span class="title">
+<a href="#tag相关操作" title="tag相关操作">tag相关操作</a>
+</span>
+<!--span class="number">
+27
+</span-->
+</li>
+<li><span class="title">
+<a href="#pull相关操作" title="pull相关操作">pull相关操作</a>
+</span>
+<!--span class="number">
+28
+</span-->
+</li>
+<li><span class="title">
+<a href="#push相关操作" title="push相关操作">push相关操作</a>
+</span>
+<!--span class="number">
+29
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+</ul>
+<p></p><hr class="page"><hr class="section"><h2 id="git简单操作"><a name="git简单操作" href="#git简单操作"></a>git简单操作</h2><h3 id="remote的相关操作"><a name="remote的相关操作" href="#remote的相关操作"></a>remote的相关操作</h3><h4 id="*查看当前的远程库*"><a name="*查看当前的远程库*" href="#*查看当前的远程库*"></a><em>查看当前的远程库</em></h4><p>要查看当前配置有哪些远程仓库,可以用 git remote 命令,它会列出每个远程库的简短名字.在克隆完某个项目后,至少可以看到一个名为 origin 的远程库,Git 默认使用这个名字来标识你所克隆的原始仓库:</p><ul>
+<li>git remote 不带参数，列出已经存在的远程分支<pre><code data-origin="<pre><code>  进入有.git的目录下
+  git remote
+  //一般会显示origin
+</code></pre>">  进入有.git的目录下
+  git remote
+  //一般会显示origin
+</code></pre></li><li><p>git remote -v | —verbose 列出详细信息，在每一个名字后面列出其远程url</p>
+<pre><code data-origin="<pre><code>  git remote -v
+  origin  http://git.mb.com/HQ01UC333/lxc_java_web_test_selenium.git (fetch）
+  origin  http://git.mb.com/HQ01UC333/lxc_java_web_test_selenium.git (push)
+</code></pre>">  git remote -v
+  origin  http://git.mb.com/HQ01UC333/lxc_java_web_test_selenium.git (fetch）
+  origin  http://git.mb.com/HQ01UC333/lxc_java_web_test_selenium.git (push)
+</code></pre></li><li><p>git remote show origin # 查看远程服务器仓库状态</p>
+<pre><code data-origin="<pre><code>  git remote show test//查看结果
+  * remote test
+  Fetch URL: git@git.mb.com:HQ01UC333/lxc_daily.git
+  Push  URL: git@git.mb.com:HQ01UC333/lxc_daily.git
+  HEAD branch: master
+  Remote branch:
+  master tracked
+  Local ref configured for 'git push':
+  master pushes to master (up to date)
+</code></pre>">  git remote show test//查看结果
+  * remote test
+  Fetch URL: git@git.mb.com:HQ01UC333/lxc_daily.git
+  Push  URL: git@git.mb.com:HQ01UC333/lxc_daily.git
+  HEAD branch: master
+  Remote branch:
+  master tracked
+  Local ref configured for 'git push':
+  master pushes to master (up to date)
+</code></pre><h4 id="添加远程仓库"><a name="添加远程仓库" href="#添加远程仓库"></a>添加远程仓库</h4>
+<p>要添加一个新的远程仓库,可以指定一个简单的名字,以便将来引用,运行 git remote add [shortname][url]:</p>
+<pre><code data-origin="<pre><code>  //在远程库已有的地址
+  git remote add  test  git@git.mb.com:HQ01UC333/lxc_daily.git
+  //实用git remote -v 验证，显示：
+  test    git@git.mb.com:HQ01UC333/lxc_daily.git (fetch)
+  test    git@git.mb.com:HQ01UC333/lxc_daily.git (push)
+</code></pre>">  //在远程库已有的地址
+  git remote add  test  git@git.mb.com:HQ01UC333/lxc_daily.git
+  //实用git remote -v 验证，显示：
+  test    git@git.mb.com:HQ01UC333/lxc_daily.git (fetch)
+  test    git@git.mb.com:HQ01UC333/lxc_daily.git (push)
+</code></pre></li></ul><h4 id="修改远程库信息"><a name="修改远程库信息" href="#修改远程库信息"></a>修改远程库信息</h4><p>具体看描述，不一一说明了。直接修改.git/config文件也可以。</p><ul>
+<li>git remote set-url origin URL  (设置url地址)</li><li>git remote set-branches [—add] name branch… （设置分支）</li><li>git remote set-url [—push] name newurl [oldurl]（设置push地址）</li><li>git remote set-url —add name newurl （添加新地址）</li><li>git remote set-url —delete name url  （删除地址）</li><li>git remote rm origin （删除远程连接）</li></ul><h4 id="建立远程仓库"><a name="建立远程仓库" href="#建立远程仓库"></a>建立远程仓库</h4><ol>
+<li>初始化一个空的git仓库<pre><code data-origin="<pre><code> git init//初始化本地空间
+ 可以看到Initialized empty Git repository in D:/aa/.git/
+</code></pre>"> git init//初始化本地空间
+ 可以看到Initialized empty Git repository in D:/aa/.git/
+</code></pre></li><li><p>向仓库提交我们写的文件</p>
+<pre><code data-origin="<pre><code> touch a.txt //创建文件a.txt
+ git add a.txt//加到库的索引中
+ git commit -m &quot;the first file to commit&quot; a.txt//提交到本地库
+ //通常也可以git commit -a -m “ ”这么使用。
+</code></pre>"> touch a.txt //创建文件a.txt
+ git add a.txt//加到库的索引中
+ git commit -m "the first file to commit" a.txt//提交到本地库
+ //通常也可以git commit -a -m “ ”这么使用。
+</code></pre></li><li><p>在本地仓库添加一个远程仓库,并将本地的master分支跟踪到远程分支</p>
+<pre><code data-origin="<pre><code> git remote add test git@git.mb.com:HQ01UC333/lxc_daily.git//上面有说明
+ git push test master//推到远程库
+</code></pre>"> git remote add test git@git.mb.com:HQ01UC333/lxc_daily.git//上面有说明
+ git push test master//推到远程库
+</code></pre></li></ol><h3 id="常用指令"><a name="常用指令" href="#常用指令"></a>常用指令</h3><h4 id="clone的相关操作"><a name="clone的相关操作" href="#clone的相关操作"></a>clone的相关操作</h4><ol>
+<li>最简单直接的命令<pre><code data-origin="<pre><code> git clone xxx.git //克隆到当前目录
+</code></pre>"> git clone xxx.git //克隆到当前目录
+</code></pre></li><li><p>如果想clone到指定目录</p>
+<pre><code data-origin="<pre><code> git clone xxx.git &quot;指定目录&quot; //克隆都指定目录
+</code></pre>"> git clone xxx.git "指定目录" //克隆都指定目录
+</code></pre></li><li><p>clone时创建新的分支替代默认Origin HEAD（master）</p>
+<pre><code data-origin="<pre><code> git clone -b [new_branch_name]  xxx.git
+</code></pre>"> git clone -b [new_branch_name]  xxx.git
+</code></pre></li><li>clone 远程分支<br>git clone 命令默认的只会建立master分支，如果你想clone指定的某一远程分支(如：dev)的话，可以如下：<br>1.查看所有分支(包括隐藏的)  git branch -a 显示所有分支<br>2.在本地新建同名的(“dev”)分支，并切换到该分支</li></ol><h4 id="status的相关操作"><a name="status的相关操作" href="#status的相关操作"></a>status的相关操作</h4><ul>
+<li><p>git status命令可以列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件.</p>
+<pre><code data-origin="<pre><code>  On branch master
+  Changes not staged for commit:
+    (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
+    (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
+
+          modified:   a.txt
+
+  Untracked files:
+    (use &quot;git add &amp;lt;file&amp;gt;...&quot; to include in what will be committed)
+
+          2.txt
+
+  no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>">  On branch master
+  Changes not staged for commit:
+    (use "git add &lt;file&gt;..." to update what will be committed)
+    (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+          modified:   a.txt
+
+  Untracked files:
+    (use "git add &lt;file&gt;..." to include in what will be committed)
+
+          2.txt
+
+  no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre><p> 文件a是提交了但是又更改了内容；文件2是新建的文件没有提交。</p>
+</li></ul><h4 id="log相关操作"><a name="log相关操作" href="#log相关操作"></a>log相关操作</h4><ol>
+<li>git log<br>如果不带任何参数，它会列出所有历史记录，最近的排在最上方，显示提交对象的哈希值，作者、提交日期、和提交说明。如果记录过多，则按Page Up、Page Down、↓、↑来控制显示；按q退出历史记录列表。</li><li>git log -n<br>如果不想向上面那样全部显示，可以选择显示前N条。</li><li>git log —stat -n<br>显示简要的增改行数统计,每次提交文件的变更统计，-n 同上，前n条，可省略。<pre><code data-origin="<pre><code> 显示这样的信息：1 file changed, 0 insertions(+), 0 deletions(-)
+</code></pre>"> 显示这样的信息：1 file changed, 0 insertions(+), 0 deletions(-)
+</code></pre></li><li>git log -p -n<br>此命令同上，不过显示更全了。</li><li>git log —pretty=oneline<br>一行显示，只显示哈希值和提交说明。</li><li>gig lot —graph<br>ASCII 字符串表示的简单图形，形象地展示了每个提交所在的分支及其分化衍合情况<pre><code data-origin="<pre><code> git log --pretty=format:&quot;%h %s&quot; --graph
+</code></pre>"> git log --pretty=format:"%h %s" --graph
+</code></pre></li><li>git log —pretty=format:” “<br>控制显示的记录格式，常用的格式占位符写法及其代表的意义如下：<pre><code data-origin="<pre><code> 选项     说明
+ %H    提交对象（commit）的完整哈希字串
+ %h    提交对象的简短哈希字串
+ %T    树对象（tree）的完整哈希字串
+ %t    树对象的简短哈希字串
+ %P    父对象（parent）的完整哈希字串
+ %p    父对象的简短哈希字串
+ %an    作者（author）的名字
+ %ae    作者的电子邮件地址
+ %ad    作者修订日期（可以用 -date= 选项定制格式）
+ %ar    作者修订日期，按多久以前的方式显示
+ %cn    提交者(committer)的名字
+ %ce    提交者的电子邮件地址
+ %cd    提交日期
+ %cr    提交日期，按多久以前的方式显示
+ %s    提交说明
+</code></pre>"> 选项     说明
+ %H    提交对象（commit）的完整哈希字串
+ %h    提交对象的简短哈希字串
+ %T    树对象（tree）的完整哈希字串
+ %t    树对象的简短哈希字串
+ %P    父对象（parent）的完整哈希字串
+ %p    父对象的简短哈希字串
+ %an    作者（author）的名字
+ %ae    作者的电子邮件地址
+ %ad    作者修订日期（可以用 -date= 选项定制格式）
+ %ar    作者修订日期，按多久以前的方式显示
+ %cn    提交者(committer)的名字
+ %ce    提交者的电子邮件地址
+ %cd    提交日期
+ %cr    提交日期，按多久以前的方式显示
+ %s    提交说明
+</code></pre>如下操作：<pre><code data-origin="<pre><code> git log --pretty=format:&quot;%h -%an,%ar : %s&quot;
+ d5dc16c -李学成,3 days ago : the first file to commit
+</code></pre>"> git log --pretty=format:"%h -%an,%ar : %s"
+ d5dc16c -李学成,3 days ago : the first file to commit
+</code></pre></li><li><p>指定路径<br>比如说，指定项目路径下的所有以a.txt结尾的文件的提交历史：</p>
+<pre><code data-origin="<pre><code> git log --pretty=oneline a.txt
+ 会显示：d5dc16ca9be3bb51ae7928b6d1aa8ff4099c64b5 the first file to commit
+</code></pre>"> git log --pretty=oneline a.txt
+ 会显示：d5dc16ca9be3bb51ae7928b6d1aa8ff4099c64b5 the first file to commit
+</code></pre><p>只需要加上文件路径作为参数即可。</p>
+</li><li>指定日期、关键字、作者</li></ol><ul>
+<li>如两天前的提交历史：git log —since=2.days</li><li>如指定作者为”BeginMan”的所有提交:$ git log —author=BeginMan</li><li>如指定关键字为“init”的所有提交：$ git log —grep=init</li><li>如指定提交者为”Jack”的所有提交：$ git log —committer=Jack<br><em>注意作者与提交者的关系：作者是程序的修改者，提交者是代码提交人。</em></li><li><p>如指定2天前，作者为“BeginMan”的提交含有关键字’init’的前2条记录：$ git log —since=2.days —author=BeginMan —grep=init -2<br><em>注意：上面选项后面的参数可以带单双引号，如—author=”BeginMan”</em></p>
+<pre><code data-origin="<pre><code>  选项 说明
+
+  -(n) 仅显示最近的 n 条提交
+
+  --since, --after 仅显示指定时间之后的提交。
+
+  --until, --before 仅显示指定时间之前的提交。
+
+  --author 仅显示指定作者相关的提交。
+
+  --committer 仅显示指定提交者相关的提交。
+</code></pre>">  选项 说明
+
+  -(n) 仅显示最近的 n 条提交
+
+  --since, --after 仅显示指定时间之后的提交。
+
+  --until, --before 仅显示指定时间之前的提交。
+
+  --author 仅显示指定作者相关的提交。
+
+  --committer 仅显示指定提交者相关的提交。
+</code></pre><p>参考：git log 的相关属性</p>
+<pre><code data-origin="<pre><code>  -p 按补丁格式显示每个更新之间的差异。
+
+  --stat 显示每次更新的文件修改统计信息。
+
+  --shortstat 只显示 --stat 中最后的行数修改添加移除统计。
+
+  --name-only 仅在提交信息后显示已修改的文件清单。
+
+  --name-status 显示新增、修改、删除的文件清单。
+
+  --abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+
+  --relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）。
+
+  --graph 显示 ASCII 图形表示的分支合并历史。
+
+  --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。
+</code></pre>">  -p 按补丁格式显示每个更新之间的差异。
+
+  --stat 显示每次更新的文件修改统计信息。
+
+  --shortstat 只显示 --stat 中最后的行数修改添加移除统计。
+
+  --name-only 仅在提交信息后显示已修改的文件清单。
+
+  --name-status 显示新增、修改、删除的文件清单。
+
+  --abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+
+  --relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）。
+
+  --graph 显示 ASCII 图形表示的分支合并历史。
+
+  --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。
+</code></pre></li><li><p><strong> git 图形客户端的使用</strong><br>使用gitk图形客户端查看历史记录。输入 gitk即可打开。</p>
+</li></ul><h4 id="创建别名"><a name="创建别名" href="#创建别名"></a>创建别名</h4><pre><code data-origin="<pre><code>    git config alias.logs &quot;log --pretty=format:'%h -%an,%ar:%s'&quot;
+    git config alias.logs
+    会显示log --pretty=format:'%h -%an,%ar:%s'
+    git logs
+    会显示：d5dc16c -李学成,3 days ago:the first file to commit
+</code></pre>">    git config alias.logs "log --pretty=format:'%h -%an,%ar:%s'"
+    git config alias.logs
+    会显示log --pretty=format:'%h -%an,%ar:%s'
+    git logs
+    会显示：d5dc16c -李学成,3 days ago:the first file to commit
+</code></pre><p>  配置Git的时候，加上—global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。<br>配置文件放哪了？每个仓库的Git配置文件都放在.git/config文件中：<br>        [alias]<br>        logs = log —pretty=format:’%h -%an,%ar:%s’<br>别名就在[alias]后面，要删除别名，直接把对应的行删掉即可。<br>而当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中，配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。</p><h4 id="add的相关操作"><a name="add的相关操作" href="#add的相关操作"></a>add的相关操作</h4><p>git add命令主要用于把我们要提交的文件的信息添加到索引库中。当我们使用git commit时，git将依据索引库中的内容来进行文件的提交。</p><ul>
+<li>git add <path>表示 add to index only files created or modified and not those deleted<br>通常是通过git add <path>的形式把我们<path>添加到索引库中，<path>可以是文件也可以是目录。<br>git不仅能判断出<path>中，修改（不包括已删除）的文件，还能判断出新添的文件，并把它们的信息添加到索引库中。</path></path></path></path></path></li><li>git add -u 表示 add to index only files modified or deleted and not those created<br>git add -u [path]: 把<path>中所有tracked文件中被修改过或已删除文件的信息添加到索引库。它不会处理untracted的文件。<br><em>省略<path>表示.,即当前目录。</path></em></path></li><li><p>git add -A: [path]表示把<path>中所有tracked文件中被修改过或已删除文件和所有untracted的文件信息添加到索引库。<br><em>省略path表示.,即当前目录。</em></path></p>
+</li><li><p>git add -i<br>可以通过git add -i [path]命令查看<path>中被所有修改过或已删除文件但没有提交的文件，<br>并通过其revert子命令可以查看<path>中所有untracted的文件，同时进入一个子命令系统。<br>//我操作失败了，期待后续研究。</path></path></p>
+</li></ul><h4 id="branch相关操作"><a name="branch相关操作" href="#branch相关操作"></a>branch相关操作</h4><ul>
+<li>查看分支<br>git branch或者git branch -v ，git branch -a 列出本地分支和远程分支，-r显示远程分支。</li><li>创建分支<br>git branch test2</li><li><p>切换分支<br>git checkout test2</p>
+</li><li><p>git branch -m | -M oldbranch newbranch 重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名。</p>
+</li><li><p>删除分支<br>git branch -d test2  //如果该分支没有合并到主分支会报错<br>git branch -D test2   //强制删除<br>git branch -d -r branchname 删除远程branchname分支</p>
+</li><li><p>分支合并<br>比如，如果要将开发中的分支（develop），合并到稳定分支（master），<br>首先切换的master分支：git checkout master。<br>然后执行合并操作：git merge develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git commit 提交更改。</p>
+</li><li><p>clone远程分支<br>git clone -b release_branch  url</p>
+</li><li><p>另外<br>git checkout -b -newbranch [start_point]<br>这样用可以创建新的分支并切换到新分支上去，b代表branch的意思，newbranch 是新分支的名称，如果没有指定提交点（start_point），默认从HEAD指向的提交创建分支。<br>git branch branchname [start_point]<br>创建新的分支，但是不会切换到新建的分支上，如果没有指定start_point，默认从HEAD指向的提交创建分支。</p>
+</li></ul><h4 id="checkout相关操作"><a name="checkout相关操作" href="#checkout相关操作"></a>checkout相关操作</h4><p>  在日常的git操作中，git checkout——检出，是我们的常用命令。最为常用的两种情形是创建分支和切换分支。同时也是一个很危险的命令，因为这条命令会重写工作区。</p><ol>
+<li>git checkout [-q] [commit] [--] paths</li><li>git checkout [branch]</li><li>git checkout [-m] [ [-b | — orphan ] [new_branch]  [start_point] </li></ol><p>用法2比用法1的区别在于，用法1包含了路径。为了避免路径和引用（或提交ID）同名而发生冲突，可以在paths前用两个连续的连字符作为分隔。用法1的commit是可选项，如果省略，则相当于从暂存区进行检出。</p><ul>
+<li>第1种用法（包含paths的用法）不会改变HEAD头指针，主要使用于指定版本的文件覆盖工作区中对应的文件。如果省略commit，则会用暂存区的文件覆盖工作区中的文件，否则用指定提交中的文件覆盖暂存区和工作区中的对应文件。</li><li>对于第2种用法，不是检出某个具体文件的的时候，即不指定paths的时候，单纯的检出某个commit或分支，是会改变HEAD头指针的。而且只有当HEAD切换到某个分支的时候才可以对提交进行跟踪，否则就会进入“分离头指针”的状态。如果省略用法2后面的branch，则默认对工作区进行状态检查。</li><li>第3种用法主要是创建和切换到新的分支（new_branch），新的分支从start_point指定的提交开始创建。新分支和我们熟悉的master分支没有什么实质的不同，都是在refs/heads命名空间下的引用。</li></ul><ol>
+<li>git branch branch start point<pre><code data-origin="<pre><code>以某个commit创建新分支。 在通常情况下，我们都会在当前分支的基础上，创建新分支。
+        git branch test2  c820f6e//这是提交时的sha
+</code></pre>">以某个commit创建新分支。 在通常情况下，我们都会在当前分支的基础上，创建新分支。
+        git branch test2  c820f6e//这是提交时的sha
+</code></pre></li><li>git checkout -B branch<br>这个命令，可以强制创建新的分支，为什么加-B呢？如果当前仓库中，已经存在一个跟你新建分支同名的分支，那么使用普通的git checkout -b branch这个命令，是会报错的，且同名分支无法创建。如果使用-B参数，那么就可以强制创建新的分支，并会覆盖掉原来的分支。</li><li>git checkout —orphan branch<br>假如你的某个分支上，积累了无数次的提交，你也懒得去打理，打印出的log也让你无力吐槽，那么这个命令将是你的神器，它会基于当前所在分支新建一个赤裸裸的分支，没有任何的提交历史，但是当前分支的内容一一俱全。新建的分支，严格意义上说，还不是一个分支，因为HEAD指向的引用中没有commit值，只有在进行一次提交后，它才算得上真正的分支。</li><li><p>git checkout —merge branch<br>这个命令适用于在切换分支的时候，将当前分支修改的内容一起打包带走，同步到切换的分支下。</p>
+<p><em>注意：如果当前分支和切换分支间的内容不同的话，容易造成冲突。<br>切换到新分支后，当前分支修改过的内容就丢失了。</em></p>
+</li><li><p>git checkout -p branch<br>这个命令可以用来打补丁。这个命令主要用来比较两个分支间的差异内容，并提供交互式的界面来选择进一步的操作。这个命令不仅可以比较两个分支间的差异，还可以比较单个文件的差异哦！//我没有成功操作。</p>
+</li></ol><h4 id="commit相关操作"><a name="commit相关操作" href="#commit相关操作"></a>commit相关操作</h4><p>在用git来进行版本控制时，我需要执行git commit命令，将索引内容添加到仓库中。<br>首先使用git status 查看文件状态</p><pre><code data-origin="<pre><code>    PS D:\aa&amp;gt; git status
+    On branch master
+    Changes to be committed:
+      (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
+
+            new file:   co.txt
+
+    Changes not staged for commit:
+      (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
+      (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
+
+            modified:   a.txt
+
+    Untracked files:
+      (use &quot;git add &amp;lt;file&amp;gt;...&quot; to include in what will be committed)
+
+            bb.txt
+</code></pre>">    PS D:\aa&gt; git status
+    On branch master
+    Changes to be committed:
+      (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+            new file:   co.txt
+
+    Changes not staged for commit:
+      (use "git add &lt;file&gt;..." to update what will be committed)
+      (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+            modified:   a.txt
+
+    Untracked files:
+      (use "git add &lt;file&gt;..." to include in what will be committed)
+
+            bb.txt
+</code></pre><ul>
+<li>git commit  -m “提交的描述信息”<br>如果我们这里不用-m参数的话，git将调到一个文本编译器（通常是vim）来让你输入提交的描述信息，git commit 提交的是暂存区里面的内容，也就是 Changes to be committed 中的文件。<br>可能一天下来，你对工作树中的许多文档都进行了更新（文档添加、修改、删除），但是我忘记了它们的名字，此时若将所做的全部更新添加到索引中，比较轻省的做法就是：</li><li>git commit -a -m “提交的描述信息”<br>git commit -a 除了将暂存区里的文件提交外，还提交 Changes bu not updated 或者Changes not staged for commit中的文件。</li><li>git commit —amend<br>对于已经修改提交过的注释，如果需要修改，可以借助 git commit —amend 来进行。会跳出编辑页面，修改保存后，关闭，就修改成功了。</li></ul><h4 id="diff的相关操作"><a name="diff的相关操作" href="#diff的相关操作"></a>diff的相关操作</h4><ul>
+<li>查看尚未暂存的文件更新了哪些部分，不加参数直接输入。<br>git diff<br>此命令比较的是工作目录(Working tree)和暂存区域快照(index)之间的差异<br>也就是修改之后还没有暂存起来的变化内容。</li><li>查看已经暂存起来的文件(staged)和上次提交时的快照之间(HEAD)的差异<br>git diff —cached<br>  git diff —staged//都一样的意思<br>显示的是下一次commit时会提交到HEAD的内容(不带-a情况下)</li><li>显示工作版本(Working tree)和HEAD的差别<br>  git diff HEAD</li><li>直接将两个分支上最新的提交做diff<br>git diff test2 master 或 git diff test2..master</li><li>输出自topic和master分别开发以来，master分支上的changed。<br>git diff topic…master</li><li>查看简单的diff结果，可以加上—stat参数<br>git diff —stat</li><li>查看当前目录和另外一个分支的差别<br>git diff test</li><li>比较上次提交commit和上上次提交<br>git diff HEAD^ HEAD</li><li>比较两个历史版本之间的差异<br>git diff SHA1 SHA2</li></ul><h4 id="目录树初步了解"><a name="目录树初步了解" href="#目录树初步了解"></a>目录树初步了解</h4><p><img src="http://img.my.csdn.net/uploads/201208/06/1344242125_1840.png" alt="目录树"><br>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage, index），标记为 “master” 的是 master 分支所代表的目录树。<br>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个“游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。<br>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下。<br>当对工作区修改（或新增）的文件执行 “git add” 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID 被记录在暂存区的文件索引中。<br>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。<br>当执行 “git reset HEAD” 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。<br>当执行 “git rm —cached <file>“ 命令时，会直接从暂存区删除文件，工作区则不做出改变。<br>当执行 “git checkout .” 或者 “git checkout — <file>“ 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。<br>当执行 “git checkout HEAD .” 或者 “git checkout HEAD <file>“ 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</file></file></file></p><h5 id="目录树的浏览"><a name="目录树的浏览" href="#目录树的浏览"></a>目录树的浏览</h5><p> git ls-tree -l HEAD 查看HEAD（版本库中当前提交）指向的目录树 -l参数可以显示文件大小<br>输出的文件条目从左至右，第一个字段是文件的属性，第二个字段（blob）说明是Git对象库中的一个blob对象（文件），第三个字段是该文件在对象库中对应的ID——一个40位的SHA1哈希值格式的ID，第四个字段是文件大小，第五个字段是文件名。<br>在浏览暂存区的目录树之前，首先清除工作区当前的改动。<br>git clean -fd 清除当前工作区中没有加入版本库的文件和目录（非跟踪文件和目录），然后执行git checkout .命令，用暂存区内容刷新工作区。<br>git ls-files -s 显示暂存区的目录树，其中第三个字段不是文件大小而是暂存区编号<br>若想针对暂存区的目录树使用git ls-tree命令，需要先将暂存区的目录树写入Git对象库，然后针对该目录树执行git ls-tree命令<br>git write-tree 输出的就是写入Git对象库的TreeID，这个ID将作为下一条命令的输入<br>5b873f747ccb268e4491f289eb37fc675ff5825b<br>git ls-tree -l 5b873f747 只需写前几位，只要不与其他对象的ID冲突即可<br>100644 blob 3b18e512dba79e4c8300dd08aeb37f8e728b8dad      12test<br>可以看出到处都是40位的SHA1哈希值格式的ID，可以用于指代文件内容（blob）、目录树（tree）和提交。<br> git write-tree | xargs git ls-tree -l -r -t 递归显示目录内容使用-r参数，显示递归过程中遇到的每棵树而不是只显示最终文件使用-t参数</p><h5 id="不要使用git-commit--a"><a name="不要使用git-commit--a" href="#不要使用git-commit--a"></a>不要使用git commit -a</h5><p>带上此参数，对本地所有变更的文件执行提交操作，包括对本地修改的文件和删除的文件，但不包括未被版本库跟踪的文件。可以简化一些操作，减少用git add命令标识变更文件的步骤，但是丢掉了对提交内容进行控制的能力。</p><h5 id="保存当前工作进度"><a name="保存当前工作进度" href="#保存当前工作进度"></a>保存当前工作进度</h5><ul>
+<li>git stash 运行完此命令后再查看工作区状态，会发现工作区尚未提交的改动（包括暂存区的改动）全都不见了。备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。</li><li>git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。</li><li>git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。</li><li>git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了</li><li>git stash apply和pop差不多的目的。<br>但是两者有什么区别呢。<br>刚才说过，git stash 可以形成list 集合。通过git stash list 可以看到list下的suoy<br>使用git stash apply @{x} ，可以将编号x的缓存释放出来，但是该缓存还存在于list中<br>而 git stash apply，会将当前分支的最后一次缓存的内容释放出来，但是刚才的记录还存在list中<br>而 git stash pop，也会将当前分支的最后一次缓存的内容释放出来，但是刚才的记录不存在list中</li></ul><h4 id="fetch相关操作"><a name="fetch相关操作" href="#fetch相关操作"></a>fetch相关操作</h4><p>一旦远程主机的版本库有了更新(Git术语叫做commit)，需要将这些更新取回本地，这时就要用到git fetch命令。</p><ul>
+<li>git fetch 远程主机名<br>将某个远程主机的更新，全部取回本地。<br>默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。<br>这一步其实是执行了两个关键操作:<br>1.创建并更新所有远程分支的本地远程分支.<br>2.设定当前分支的FETCH_HEAD为远程服务器的master分支 (上面说的第一种情况)<br><em>需要注意的是: 和push不同, fetch会自动获取远程`新加入’的分支.</em></li><li><p>git fetch 远程主机名 分支名<br>比如，取回origin主机的master分支。</p>
+<pre><code data-origin="<pre><code>  git fetch origin master
+</code></pre>">  git fetch origin master
+</code></pre><p>设定当前分支的 FETCH_HEAD’ 为远程服务器的master分支`.<br>注意: 在这种情况下, 不会在本地创建本地远程分支, 这是因为:<br>这个操作是git pull origin branch1的第一步, 而对应的pull操作,并不会在本地创建新的branch.<br>一个附加效果是:<br>这个命令可以用来测试远程主机的远程分支master是否存在, 如果存在, 返回0, 如果不存在, 返回128, 抛出一个异常.</p>
+</li><li><p>git fetch origin branch1:branch2<br>首先执行上面的fetch操作<br>使用远程branch1分支在本地创建branch2(但不会切换到该分支),<br>如果本地不存在branch2分支, 则会自动创建一个新的branch2分支,<br>如果本地存在branch2分支, 并且是`fast forward’, 则自动合并两个分支, 否则, 会阻止以上操作.<br>git fetch origin :branch2<br>等价于: git fetch origin master:branch2</p>
+</li><li><p>其他<br>所取回的更新，在本地主机上要用”远程主机名/分支名”的形式读取。比如origin主机的master，就要用origin/master读取。<br>git branch命令的-r选项，可以用来查看远程分支，-a选项查看所有分支。取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支。此外，也可以使用git merge命令或者git rebase命令，在本地分支上合并远程分支。</p>
+</li></ul><h4 id="init相关操作"><a name="init相关操作" href="#init相关操作"></a>init相关操作</h4><ul>
+<li>git init 本地仓库，包含.git目录和工作目录</li><li>git init —bare 裸仓库，只有.git目录下的内容.适合作为服务器仓库.</li><li>相互转换<br>git clone —bare 从仓库导出bare仓库<br>如果服务仓库以git init仓健，当用户向它提交代码时，会出现报错，解决办法是使用git clone —bare 克隆出.git内容作为服务器仓库.</li></ul><h4 id="rm相关操作"><a name="rm相关操作" href="#rm相关操作"></a>rm相关操作</h4><p>在git中我们可以通过git rm命令把一个文件删除，并把它从git的仓库管理系统中移除。但是注意最后要执行git commit才真正提交到git仓库。</p><ul>
+<li>git rm 1.txt<br>删除1.txt文件，并把它从git的仓库管理系统中移除。</li><li>git rm -r myFolder<br>删除文件夹myFolder，并把它从git的仓库管理系统中移除。</li><li>git rm —cached 10.txt<br>把文件10.txt从git的索引库中移除,但是对文件10.txt本身并不进行任何操作。</li><li>还原被删掉的文件可以使用git add -i 中的revert后checkout找回来。</li></ul><h4 id="reset的相关操作"><a name="reset的相关操作" href="#reset的相关操作"></a>reset的相关操作</h4><ul>
+<li>在git的一般使用中，如果发现错误的将不想staging的文件add进入index之后，想回退取消，则可以使用命令：git reset HEAD file…，同时git add完毕之后，git也会做相应的提示。</li><li>git reset [—hard|soft|mixed|merge|keep] [commit或HEAD]<br>将当前的分支重设（reset）到指定的<commit>或者HEAD（默认，如果不显示指定commit，默认是HEAD，即最新的一次提交），并且根据[mode]有可能更新index和working directory。mode的取值可以是hard、soft、mixed、merged、keep。下面来详细说明每种模式的意义和效果。</commit></li></ul><ol>
+<li>—hard：重设（reset） index和working directory，自从<commit>以来在working directory中的任何改变都被丢弃，并把HEAD指向<commit>。 例如：git reset —hard HEAD~1</commit></commit></li><li>—soft：index和working directory中的内容不作任何改变，仅仅把HEAD指向<commit>。这个模式的效果是，执行完毕后，自从<commit>以来的所有改变都会显示在git status的”Changes to be committed”中。 例如：git reset —soft(默认) HEAD~1<pre><code data-origin="<pre><code>在使用git进行协作开发时，我们经常需要将自己的修改生成patch发给被人，但是在修改代码的过程中我们进行了很多次的提交，如何生成从最初的代码状态到最终代码状态的patch呢？下面要介绍的功能是应对这中情况。
+现假设我们git软件仓库中的分支情况如下：
+a--&amp;gt;b--&amp;gt;c
+也就是说我们的代码从状态a修改到状态b，进行一次提交，然后再修改到状态c，进行一次提交。这时我们已经肯定由a到c的修改是正确的，不再需要状态b了，并且要把从a到c的变化生成一个patch发送给别人。如果直接打包的话会生成两个path，那么如何生成一个patch呢，这时就需要git-reset命令。
+首先给状态a创建一个tag，假设名称为A，然后执行
+git-reset --soft A
+这样我们的软件仓库就变为
+a
+状态b和状态c都已经被删除了，但是当前的代码并没有被改变，还是状态c的代码，这时我们做一次提交，软件仓库变成下面的样子：
+a--&amp;gt;d
+状态d和状态c所对应的代码是完全相同的，只是名字不同。现在就可以生成一个patch打包发给别人了
+</code></pre>">在使用git进行协作开发时，我们经常需要将自己的修改生成patch发给被人，但是在修改代码的过程中我们进行了很多次的提交，如何生成从最初的代码状态到最终代码状态的patch呢？下面要介绍的功能是应对这中情况。
+现假设我们git软件仓库中的分支情况如下：
+a--&gt;b--&gt;c
+也就是说我们的代码从状态a修改到状态b，进行一次提交，然后再修改到状态c，进行一次提交。这时我们已经肯定由a到c的修改是正确的，不再需要状态b了，并且要把从a到c的变化生成一个patch发送给别人。如果直接打包的话会生成两个path，那么如何生成一个patch呢，这时就需要git-reset命令。
+首先给状态a创建一个tag，假设名称为A，然后执行
+git-reset --soft A
+这样我们的软件仓库就变为
+a
+状态b和状态c都已经被删除了，但是当前的代码并没有被改变，还是状态c的代码，这时我们做一次提交，软件仓库变成下面的样子：
+a--&gt;d
+状态d和状态c所对应的代码是完全相同的，只是名字不同。现在就可以生成一个patch打包发给别人了
+</code></pre></commit></commit></li><li>—mixed：仅reset index，但是不reset working directory。这个模式是默认模式，即当不显示告知git reset模式时，会使用mixed模式。这个模式的效果是，working directory中文件的修改都会被保留，不会丢弃，但是也不会被标记成”Changes to be committed”，但是会打出什么还未被更新的报告。</li><li>—merge和—keep用的不多。</li></ol><h6 id="常用示例"><a name="常用示例" href="#常用示例"></a>常用示例</h6><p>下面列出一些git reset的典型的应用场景：<br>A) 回滚add操纵<br>引用<br>$ edit                                     (1)<br>$ git add frotz.c filfre.c<br>$ mailx                                    (2)<br>$ git reset                                (3)<br>$ git pull git://info.example.com/ nitfol  (4) </p><p>(1) 编辑文件frotz.c, filfre.c，做了些更改，并把更改添加到了index<br>(2) 查看邮件，发现某人要你pull，有一些改变需要你merge下来<br>(3) 然而，你已经把index搞乱了，因为index同HEAD commit不匹配了，但是你知道，即将pull的东西不会影响已经修改的frotz.c和filfre.c，因此你可以revert这两个文件的改变。revert后，那些改变应该依旧在working directory中，因此执行git reset。<br>(4) 然后，执行了pull之后，自动merge，frotz.c和filfre.c这些改变依然在working directory中。 </p><p>B) 回滚最近一次commit<br>引用<br>$ git commit …<br>$ git reset —soft HEAD^      (1)<br>$ edit                        (2)<br>$ git commit -a -c ORIG_HEAD  (3) </p><p>(1) 当提交了之后，你又发现代码没有提交完整，或者你想重新编辑一下提交的comment，执行git reset —soft HEAD^，让working tree还跟reset之前一样，不作任何改变。<br>HEAD^指向HEAD之前最近的一次commit。<br>(2) 对working tree下的文件做修改<br>(3) 然后使用reset之前那次commit的注释、作者、日期等信息重新提交。注意，当执行git reset命令时，git会把老的HEAD拷贝到文件.git/ORIG_HEAD中，在命令中可以使用ORIG_HEAD引用这个commit。commit 命令中 -a 参数的意思是告诉git，自动把所有修改的和删除的文件都放进stage area，未被git跟踪的新建的文件不受影响。commit命令中-c <commit> 或者 -C <commit>意思是拿已经提交的commit对象中的信息（作者，提交者，注释，时间戳等）提交，那么这条commit命令的意思就非常清晰了，把所有更改的文件加入stage area，并使用上次的提交信息重新提交。 </commit></commit></p><p>C) 回滚最近几次commit，并把这几次commit放到叫做topic的branch上去。<br>引用<br>$ git branch topic/wip     (1)<br>$ git reset —hard HEAD~3  (2)<br>$ git checkout topic/wip   (3)</p><p>(1) 你已经提交了一些commit，但是此时发现这些commit还不够成熟，不能进入master分支，但你希望在新的branch上润色这些commit改动。因此执行了git branch命令在当前的HEAD上建立了新的叫做 topic/wip的分支。<br>(2) 然后回滚master branch上的最近三次提交。HEAD~3指向当前HEAD-3个commit的commit，git reset —hard HEAD~3即删除最近的三个commit（删除HEAD, HEAD^, HEAD<sub>2），将HEAD指向HEAD</sub>3。 </p><p>D) 永久删除最后几个commit<br>引用<br>$ git commit …<br>$ git reset —hard HEAD~3   (1)</p><p>(1) 最后三个commit（即HEAD, HEAD^和HEAD~2）提交有问题，你想永久删除这三个commit。 </p><p>E) 回滚merge和pull操作<br>引用<br>$ git pull                         (1)<br>Auto-merging nitfol<br>CONFLICT (content): Merge conflict in nitfol<br>Automatic merge failed; fix conflicts and then commit the result.<br>$ git reset —hard                 (2)<br>$ git pull . topic/branch          (3)<br>Updating from 41223… to 13134…<br>Fast-forward<br>$ git reset —hard ORIG_HEAD       (4)</p><p>(1) 从origin拉下来一些更新，但是产生了很多冲突，你暂时没有这么多时间去解决这些冲突，因此你决定稍候有空的时候再重新pull。<br>(2) 由于pull操作产生了冲突，因此所有pull下来的改变尚未提交，仍然再stage area中，这种情况下git reset —hard 与 git reset —hard HEAD意思相同，即都是清除index和working tree中被搞乱的东西。<br>(3) 将topic/branch合并到当前的branch，这次没有产生冲突，并且合并后的更改自动提交。<br>(4) 但是此时你又发现将topic/branch合并过来为时尚早，因此决定退滚merge，执行git reset —hard ORIG_HEAD回滚刚才的pull/merge操作。说明：前面讲过，执行git reset时，git会把reset之前的HEAD放入.git/ORIG_HEAD文件中，命令行中使用ORIG_HEAD引用这个commit。同样的，执行pull和merge操作时，git都会把执行操作前的HEAD放入ORIG_HEAD中，以防回滚操作。 </p><p>F) 在被污染的working tree中回滚merge或者pull<br>引用<br>$ git pull                         (1)<br>Auto-merging nitfol<br>Merge made by recursive.<br>nitfol                |   20 <ins>+</ins>——<br>…<br>$ git reset —merge ORIG_HEAD      (2)</p><p>(1) 即便你已经在本地更改了一些你的working tree，你也可安全的git pull，前提是你知道将要pull的内容不会覆盖你的working tree中的内容。<br>(2) git pull完后，你发现这次pull下来的修改不满意，想要回滚到pull之前的状态，从前面的介绍知道，我们可以执行git reset —hard ORIG_HEAD，但是这个命令有个副作用就是清空你的working tree，即丢弃你的本地未add的那些改变。为了避免丢弃working tree中的内容，可以使用git reset —merge ORIG_HEAD，注意其中的—hard 换成了 —merge，这样就可以避免在回滚时清除working tree。 </p><p>G) 被中断的工作流程<br>在实际开发中经常出现这样的情形：你正在开发一个大的feature，此时来了一个紧急的bug需要修复，但是目前在working tree中的内容还没有成型，还不足以commit，但是你又必须切换的另外的branch去fix bug。请看下面的例子<br>引用<br>$ git checkout feature ;# you were working in “feature” branch and<br>$ work work work       ;# got interrupted<br>$ git commit -a -m “snapshot WIP”                 (1)<br>$ git checkout master<br>$ fix fix fix<br>$ git commit ;# commit with real log<br>$ git checkout feature<br>$ git reset —soft HEAD^ ;# go back to WIP state  (2)<br>$ git reset                                       (3)</p><p>(1) 这次属于临时提交，因此随便添加一个临时注释即可。<br>(2) 这次reset删除了WIP commit，并且把working tree设置成提交WIP快照之前的状态。<br>(3) 此时，在index中依然遗留着“snapshot WIP”提交时所做的uncommit changes，git reset将会清理index成为尚未提交”snapshot WIP”时的状态便于接下来继续工作。 </p><p>(H) Reset单独的一个文件<br>假设你已经添加了一个文件进入index，但是而后又不打算把这个文件提交，此时可以使用git reset把这个文件从index中去除。<br>引用<br>$ git reset — frotz.c                      (1)<br>$ git commit -m “Commit files in index”     (2)<br>$ git add frotz.c                           (3)</p><p>(1) 把文件frotz.c从index中去除，<br>(2) 把index中的文件提交<br>(3) 再次把frotz.c加入index </p><p>(I) 保留working tree并丢弃一些之前的commit<br>假设你正在编辑一些文件，并且已经提交，接着继续工作，但是现在你发现当前在working tree中的内容应该属于另一个branch，与这之前的commit没有什么关系。此时，你可以开启一个新的branch，并且保留着working tree中的内容。<br>引用<br>$ git tag start<br>$ git checkout -b branch1<br>$ edit<br>$ git commit …                            (1)<br>$ edit<br>$ git checkout -b branch2                   (2)<br>$ git reset —keep start                    (3)</p><p>(1) 这次是把在branch1中的改变提交了。<br>(2) 此时发现，之前的提交不属于这个branch，此时你新建了branch2，并切换到了branch2上。<br>(3) 此时你可以用reset —keep把在start之后的commit清除掉，但是保持working tree不变。</p><h4 id="revert相关操作"><a name="revert相关操作" href="#revert相关操作"></a>revert相关操作</h4><p>git revert 撤销 某次操作，此次操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交。</p><ul>
+<li>git revert HEAD                  撤销前一次 commit</li><li>git revert HEAD^               撤销前前一次 commit</li><li>git revert commit （比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤销指定的版本，撤销也会作为一次提交进行保存。<br>git revert是提交一个新的版本，将需要revert的版本的内容再反向修改回去，<br>版本会递增，不影响之前提交的内容</li><li>git revert 和 git reset的区别 </li></ul><ol>
+<li>git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit。 </li><li>在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。因为git revert是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，导致这部分改变不会再次出现，但是git reset是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入。 </li><li>git reset 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。</li></ol><h4 id="merge相关操作"><a name="merge相关操作" href="#merge相关操作"></a>merge相关操作</h4><p>git merge branchname<br>如果没有冲突的话，merge完成。有冲突的话，git会提示那个文件中有冲突.</p><h4 id="tag相关操作"><a name="tag相关操作" href="#tag相关操作"></a>tag相关操作</h4><ul>
+<li>列出标签<br>git tag # 在控制台打印出当前仓库的所有标签<br>it tag -l ‘v0.1.*’ # 搜索符合模式的标签</li><li><p>打标签<br>git标签分为两种类型：轻量标签和附注标签。轻量标签是指向提交对象的引用，附注标签则是仓库中的一个独立对象。建议使用附注标签。<br>创建轻量标签<br>$ git tag v0.1.2-light</p>
+<p>创建附注标签<br>$ git tag -a v0.1.2 -m “0.1.2版本”</p>
+<p>创建轻量标签不需要传递参数，直接指定标签名称即可。<br>创建附注标签时，参数a即annotated的缩写，指定标签类型，后附标签名。参数m指定标签说明，说明信息会保存在标签对象中。</p>
+</li><li><p>切换到标签<br>与切换分支命令相同，用git checkout [tagname]<br>查看标签信息<br>用git show命令可以查看标签的版本信息：<br>$ git show v0.1.2</p>
+</li><li><p>删除标签<br>误打或需要修改标签时，需要先将标签删除，再打新标签。<br>$ git tag -d v0.1.2 # 删除标签<br>参数d即delete的缩写，意为删除其后指定的标签。</p>
+</li><li><p>给指定的commit打标签<br>打标签不必要在head之上，也可在之前的版本上打，这需要你知道某个提交对象的校验和（通过git log获取）。<br>补打标签<br>$ git tag -a v0.1.1 9fbc3d0</p>
+</li><li>标签发布<br>通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作：<br>$ git push origin v0.1.2 # 将v0.1.2标签提交到git服务器<br>$ git push origin –tags # 将本地所有标签一次性提交到git服务器</li></ul><h4 id="pull相关操作"><a name="pull相关操作" href="#pull相关操作"></a>pull相关操作</h4><p>git pull命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。</p><ul>
+<li>git pull 远程主机名 远程分支名:本地分支名<br>git pull origin next:master//比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。</li><li>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。<br>git pull origin next<br>上面命令表示，取回origin/next分支，再与当前分支合并。实质上，这等同于先做git fetch，再做git merge。</li><li>在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系(tracking)。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动”追踪”origin/master分支。<br>Git也允许手动建立追踪关系。<pre><code data-origin="<pre><code>  git branch --set-upstream master origin/next
+</code></pre>">  git branch --set-upstream master origin/next
+</code></pre>上面命令指定master分支追踪origin/next分支。<br>如果当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。<pre><code data-origin="<pre><code>  git pull origin
+</code></pre>">  git pull origin
+</code></pre>上面命令表示，本地的当前分支自动与对应的origin主机”追踪分支”(remote-tracking branch)进行合并。</li><li>如果当前分支只有一个追踪分支，连远程主机名都可以省略。<pre><code data-origin="<pre><code>   git pull
+</code></pre>">   git pull
+</code></pre>上面命令表示，当前分支自动与唯一一个追踪分支进行合并。</li><li>如果合并需要采用rebase模式，可以使用–rebase选项。<pre><code data-origin="<pre><code>  git pull --rebase 远程主机名 远程分支名:本地分支名
+</code></pre>">  git pull --rebase 远程主机名 远程分支名:本地分支名
+</code></pre></li></ul><h4 id="push相关操作"><a name="push相关操作" href="#push相关操作"></a>push相关操作</h4><p>git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。</p><ul>
+<li>git push 远程主机名 本地分支名:远程分支名<br>注意，分支推送顺序的写法是&lt;来源地&gt;:&lt;目的地&gt;，所以git pull是&lt;远程分支&gt;:&lt;本地分支&gt;，而git push是&lt;本地分支&gt;:&lt;远程分支&gt;。</li><li>如果省略远程分支名，则表示将本地分支推送与之存在”追踪关系”的远程分支(通常两者同名)，如果该远程分支不存在，则会被新建。<pre><code data-origin="<pre><code>  git push origin master
+</code></pre>">  git push origin master
+</code></pre>上面命令表示，将本地的master分支推送到origin主机的master分支。如果后者不存在，则会被新建。</li><li><p>如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</p>
+<pre><code data-origin="<pre><code>  git push origin :master
+  等同于
+   git push origin --delete master
+</code></pre>">  git push origin :master
+  等同于
+   git push origin --delete master
+</code></pre><p>上面命令表示删除origin主机的master分支。</p>
+</li><li><p>如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。</p>
+<pre><code data-origin="<pre><code>  git push origin
+</code></pre>">  git push origin
+</code></pre></li></ul><p>上面命令表示，将当前分支推送到origin主机的对应分支。</p><ul>
+<li><p>如果当前分支只有一个追踪分支，那么主机名都可以省略。</p>
+<pre><code data-origin="<pre><code>   git push
+</code></pre>">   git push
+</code></pre></li><li><p>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
+<pre><code data-origin="<pre><code>  git push -u origin master
+</code></pre>">  git push -u origin master
+</code></pre><p>上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
+</li><li>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。如果要修改这个设置，可以采用git config命令。<pre><code data-origin="<pre><code>   git config --global push.default matching
+   或者
+   git config --global push.default simple
+</code></pre>">   git config --global push.default matching
+   或者
+   git config --global push.default simple
+</code></pre></li><li><p>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项。</p>
+<pre><code data-origin="<pre><code>  git push --all origin
+</code></pre>">  git push --all origin
+</code></pre><p>上面命令表示，将所有本地分支都推送到origin主机。</p>
+</li><li>如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用–force选项。<pre><code data-origin="<pre><code>  git push --force origin
+</code></pre>">  git push --force origin
+</code></pre>上面命令使用–force选项，结果导致在远程主机产生一个”非直进式”的合并(non-fast-forward merge)。除非你很确定要这样做，否则应该尽量避免使用–force选项。</li><li>最后，git push不会推送标签(tag)，除非使用–tags选项。<pre><code data-origin="<pre><code>  git push origin --tags
+</code></pre>">  git push origin --tags
+</code></pre></li></ul><hr class="page"><hr class="section"><p class="toc" style="undefined"></p><ul>
+<li><ul>
+<li><span class="title">
+<a href="#git简单操作" title="git简单操作">git简单操作</a>
+</span>
+<!--span class="number">
+0
+</span-->
+<ul>
+<li><span class="title">
+<a href="#remote的相关操作" title="remote的相关操作">remote的相关操作</a>
+</span>
+<!--span class="number">
+1
+</span-->
+<ul>
+<li><span class="title">
+<a href="#*查看当前的远程库*" title="查看当前的远程库">查看当前的远程库</a>
+</span>
+<!--span class="number">
+2
+</span-->
+</li>
+<li><span class="title">
+<a href="#添加远程仓库" title="添加远程仓库">添加远程仓库</a>
+</span>
+<!--span class="number">
+3
+</span-->
+</li>
+<li><span class="title">
+<a href="#修改远程库信息" title="修改远程库信息">修改远程库信息</a>
+</span>
+<!--span class="number">
+4
+</span-->
+</li>
+<li><span class="title">
+<a href="#建立远程仓库" title="建立远程仓库">建立远程仓库</a>
+</span>
+<!--span class="number">
+5
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#常用指令" title="常用指令">常用指令</a>
+</span>
+<!--span class="number">
+6
+</span-->
+<ul>
+<li><span class="title">
+<a href="#clone的相关操作" title="clone的相关操作">clone的相关操作</a>
+</span>
+<!--span class="number">
+7
+</span-->
+</li>
+<li><span class="title">
+<a href="#status的相关操作" title="status的相关操作">status的相关操作</a>
+</span>
+<!--span class="number">
+8
+</span-->
+</li>
+<li><span class="title">
+<a href="#log相关操作" title="log相关操作">log相关操作</a>
+</span>
+<!--span class="number">
+9
+</span-->
+</li>
+<li><span class="title">
+<a href="#创建别名" title="创建别名">创建别名</a>
+</span>
+<!--span class="number">
+10
+</span-->
+</li>
+<li><span class="title">
+<a href="#add的相关操作" title="add的相关操作">add的相关操作</a>
+</span>
+<!--span class="number">
+11
+</span-->
+</li>
+<li><span class="title">
+<a href="#branch相关操作" title="branch相关操作">branch相关操作</a>
+</span>
+<!--span class="number">
+12
+</span-->
+</li>
+<li><span class="title">
+<a href="#checkout相关操作" title="checkout相关操作">checkout相关操作</a>
+</span>
+<!--span class="number">
+13
+</span-->
+</li>
+<li><span class="title">
+<a href="#commit相关操作" title="commit相关操作">commit相关操作</a>
+</span>
+<!--span class="number">
+14
+</span-->
+</li>
+<li><span class="title">
+<a href="#diff的相关操作" title="diff的相关操作">diff的相关操作</a>
+</span>
+<!--span class="number">
+15
+</span-->
+</li>
+<li><span class="title">
+<a href="#目录树初步了解" title="目录树初步了解">目录树初步了解</a>
+</span>
+<!--span class="number">
+16
+</span-->
+<ul>
+<li><span class="title">
+<a href="#目录树的浏览" title="目录树的浏览">目录树的浏览</a>
+</span>
+<!--span class="number">
+17
+</span-->
+</li>
+<li><span class="title">
+<a href="#不要使用git-commit--a" title="不要使用git commit -a">不要使用git commit -a</a>
+</span>
+<!--span class="number">
+18
+</span-->
+</li>
+<li><span class="title">
+<a href="#保存当前工作进度" title="保存当前工作进度">保存当前工作进度</a>
+</span>
+<!--span class="number">
+19
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#fetch相关操作" title="fetch相关操作">fetch相关操作</a>
+</span>
+<!--span class="number">
+20
+</span-->
+</li>
+<li><span class="title">
+<a href="#init相关操作" title="init相关操作">init相关操作</a>
+</span>
+<!--span class="number">
+21
+</span-->
+</li>
+<li><span class="title">
+<a href="#rm相关操作" title="rm相关操作">rm相关操作</a>
+</span>
+<!--span class="number">
+22
+</span-->
+</li>
+<li><span class="title">
+<a href="#reset的相关操作" title="reset的相关操作">reset的相关操作</a>
+</span>
+<!--span class="number">
+23
+</span-->
+<ul>
+<li><ul>
+<li><span class="title">
+<a href="#常用示例" title="常用示例">常用示例</a>
+</span>
+<!--span class="number">
+24
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#revert相关操作" title="revert相关操作">revert相关操作</a>
+</span>
+<!--span class="number">
+25
+</span-->
+</li>
+<li><span class="title">
+<a href="#merge相关操作" title="merge相关操作">merge相关操作</a>
+</span>
+<!--span class="number">
+26
+</span-->
+</li>
+<li><span class="title">
+<a href="#tag相关操作" title="tag相关操作">tag相关操作</a>
+</span>
+<!--span class="number">
+27
+</span-->
+</li>
+<li><span class="title">
+<a href="#pull相关操作" title="pull相关操作">pull相关操作</a>
+</span>
+<!--span class="number">
+28
+</span-->
+</li>
+<li><span class="title">
+<a href="#push相关操作" title="push相关操作">push相关操作</a>
+</span>
+<!--span class="number">
+29
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+</ul>
+<p></p>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+</body>
+</html>
